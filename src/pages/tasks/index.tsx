@@ -48,7 +48,7 @@ const TaskContent = styled.div`
 
 `;
 
-export default function Tasks() {
+export default function Tasks(props) {
     return(
         <Container>
             <Head>
@@ -66,7 +66,7 @@ export default function Tasks() {
             <Header>
                 <LeftHeader>
                     <Title>
-                        Level up from 1-50 in 6.2h!
+                        { props.title }
                     </Title>
                     <Faction />
                 </LeftHeader>
@@ -75,7 +75,7 @@ export default function Tasks() {
                 </RightHeader>
             </Header>
             <TaskContent>
-                <a href="https://www.wowhead.com/item=31015">hai</a>
+                { props.children }
             </TaskContent>
         </Container>
     );

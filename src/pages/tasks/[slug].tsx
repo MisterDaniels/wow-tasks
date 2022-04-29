@@ -3,13 +3,13 @@ import path from 'path';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
+import Tasks from './index';
 
 const Task = ({ frontMatter: { title }, mdxSource }) => {
     return (
-        <div>
-            <h1>{title}</h1>
+        <Tasks title={ title }>
             <MDXRemote {...mdxSource} />
-        </div>
+        </Tasks>
     );
 }
 
