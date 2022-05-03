@@ -18,6 +18,7 @@ const Container = styled.div`
 const Header = styled.div`
     ${tw`
         flex
+        mb-8
     `}
 `;
 
@@ -37,10 +38,19 @@ const RightHeader = styled.div`
     `}
 `;
 
+const Logo = styled.h1`
+    ${tw`
+        text-5xl
+        font-bold
+        mb-16
+    `}
+`;
+
 const Title = styled.h1`
     ${tw`
         text-3xl
         font-bold
+        mb-3
     `}
 `;
 
@@ -63,18 +73,21 @@ export default function Tasks(props) {
                     type="text/javascript" 
                     src="https://wow.zamimg.com/widgets/power.js" />
             </Head>
-            <Header>
-                <LeftHeader>
-                    <Title>
-                        { props.title }
-                    </Title>
-                    <Faction />
-                </LeftHeader>
-                <RightHeader>
-
-                </RightHeader>
-            </Header>
+            <Logo>
+                WOW Tasks
+            </Logo>
             <TaskContent>
+                <Header>
+                    <LeftHeader>
+                        <Title>
+                            { props.title }
+                        </Title>
+                        <Faction />
+                    </LeftHeader>
+                    <RightHeader>
+
+                    </RightHeader>
+                </Header>
                 { props.children }
             </TaskContent>
         </Container>

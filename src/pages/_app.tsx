@@ -11,11 +11,15 @@ const GlobalStyle = createGlobalStyle`
         Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
         sans-serif;
         width: 100vw;
+        background-color: #17181C;
+        color: #F5F5F5;
     }
 
     * {
         box-sizing: border-box;
     }
+
+
 `;
 
 const theme = {
