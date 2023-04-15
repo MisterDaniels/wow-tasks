@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-import Faction from '../../components/Faction';
+import { Faction } from '../../components';
 
 const Container = styled.div`
     ${tw`
