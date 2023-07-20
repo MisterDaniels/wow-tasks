@@ -1,4 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { theme } from '../../tailwind.config';
 
 import './global.css';
 
@@ -21,12 +22,6 @@ const GlobalStyle = createGlobalStyle`
 
 
 `;
-
-const theme = {
-    colors: {
-      primary: '#0070f3',
-    }
-};
 
 export default function App({ Component, pageProps }) {
     return (

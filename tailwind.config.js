@@ -10,7 +10,11 @@ module.exports = {
                 'ice-white': '#F5F5F5',
                 'alliance-blue': '#02518A',
                 'horde-red': '',
-                'link': '#ffd100'
+                'link': '#ffd100',
+                'green-check': '#0EAA42',
+                'dark': '#17181C',
+                'almost-dark': '#1D1F25',
+                'lighter-dark': '#333333'
             }
         },
     },
@@ -23,6 +27,9 @@ module.exports = {
                 },
                 'a[href*=object]': {
                     color: theme('colors.link')
+                },
+                'div': {
+                    borderColor: theme('colors.lighter-dark')
                 }
             });
         })

@@ -4,11 +4,12 @@ import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import Tasks from './index';
-import { Task as TaskContent, Checkbox } from '../../components';
+import { Task as TaskContent, Checkbox, Item } from '../../components';
 
 const components = {
     Task: TaskContent,
-    Checkbox
+    Checkbox,
+    Item
 }
 
 const Task = ({ frontMatter: { title }, mdxSource }) => {
