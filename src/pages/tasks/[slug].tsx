@@ -12,9 +12,9 @@ const components = {
     Item
 }
 
-const Task = ({ frontMatter: { title }, mdxSource }) => {
+const Task = ({ frontMatter: { title, faction }, mdxSource }) => {
     return (
-        <Tasks title={ title }>
+        <Tasks title={ title } faction={ faction }>
             <MDXRemote {...mdxSource} components={ components } />
         </Tasks>
     );

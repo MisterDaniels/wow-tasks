@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import { FaCheck } from 'react-icons/fa';
 import tailwindConfig from '../../../../tailwind.config';
+import { TaskEdit } from '../../';
 
 const Content = styled.div`
     ${tw`
@@ -11,6 +12,7 @@ const Content = styled.div`
         py-4
         border
         rounded-lg
+        relative
         flex
     `}
     background-color: ${ props => props.theme.extend.colors['almost-dark'] };
@@ -25,7 +27,7 @@ const StyledLabel = styled.label`
   cursor: pointer;
   position: relative;
   padding-left: 25px;
-  /* Estilos adicionais para o rótulo */
+  margin-top: 2px;
 `;
 
 const Checkmark = styled.span`
@@ -37,7 +39,6 @@ const Checkmark = styled.span`
   background-color: transparent;
   border: 1px solid ${ props => (props.isChecked ? props.theme.extend.colors['green-check'] : props.theme.extend.colors['lighter-dark']) };
   border-radius: 5px;
-  /* Outros estilos desejados para o elemento simulando o checkbox */
 `;
 
 const CheckmarkIcon = styled.span`
@@ -49,7 +50,16 @@ const CheckmarkIcon = styled.span`
   width: 11px;
   height: 11px;
   display: ${props => (props.isChecked ? 'flex' : 'none')};
-  /* Outros estilos desejados para o ícone de check */
+`;
+
+const Menu = styled.div`
+    ${tw`
+        absolute
+        right-0
+        bottom-0
+        px-7
+        py-4
+    `}
 `;
 
 const Checkbox = ({children, props}) => {
@@ -74,6 +84,9 @@ const Checkbox = ({children, props}) => {
                 </CheckmarkIcon>
             </StyledLabel>
             { children }
+            <Menu>
+                <TaskEdit />
+            </Menu>
         </Content>
     );
 }

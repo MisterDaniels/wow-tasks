@@ -54,11 +54,24 @@ const Title = styled.h1`
     `}
 `;
 
-const TaskContent = styled.div`
+const Badges = styled.div`
+    ${tw`
+        flex
+        space-x-2
+    `}
+`;
 
+const TaskContent = styled.div`
+    & > * {
+        ${tw`
+            mb-2
+        `}
+    }
 `;
 
 export default function Tasks(props) {
+    let factions = props.faction.split(',').map(faction => faction.trim().toLowerCase());
+
     return(
         <Container>
             <Head>
@@ -76,18 +89,22 @@ export default function Tasks(props) {
             <Logo>
                 WOW Tasks
             </Logo>
-            <TaskContent>
-                <Header>
-                    <LeftHeader>
-                        <Title>
-                            { props.title }
-                        </Title>
-                        <Faction />
-                    </LeftHeader>
-                    <RightHeader>
+            <Header>
+                <LeftHeader>
+                    <Title>
+                        { props.title }
+                    </Title>
+                    <Badges>
+                        { factions.map((faction, index) => (
+                            <Faction key={ index } name={ faction } />
+                        )) }
+                    </Badges>
+                </LeftHeader>
+                <RightHeader>
 
-                    </RightHeader>
-                </Header>
+                </RightHeader>
+            </Header>
+            <TaskContent>
                 { props.children }
             </TaskContent>
         </Container>

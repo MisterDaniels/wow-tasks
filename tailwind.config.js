@@ -8,13 +8,16 @@ module.exports = {
         extend: {
             colors: {
                 'ice-white': '#F5F5F5',
+                'greyish-white': '#D5D5DE',
                 'alliance-blue': '#02518A',
-                'horde-red': '',
+                'selection-blue': '#41475A',
+                'horde-red': '#8C1616',
                 'link': '#ffd100',
                 'green-check': '#0EAA42',
                 'dark': '#17181C',
                 'almost-dark': '#1D1F25',
-                'lighter-dark': '#333333'
+                'lighter-dark': '#333333',
+                'red-highlight': '#AB5769'
             }
         },
     },
